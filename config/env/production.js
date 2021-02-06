@@ -147,12 +147,12 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    cors: {
-      allowOrigins: [
-        'https://bs-todo-api.herokuapp.com',
-        'https://bs-todo-client.netlify.app'
-      ]
-    },
+    // cors: {
+    //   allowOrigins: [
+    //     'https://bs-todo-api.herokuapp.com',
+    //     'https://bs-todo-client.netlify.app'
+    //   ]
+    // },
 
   },
 
