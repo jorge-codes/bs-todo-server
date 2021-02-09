@@ -27,4 +27,8 @@ module.exports.bootstrap = async function() {
   // ]);
   // ```
 
+  sails.log('Environment variables:');
+  sails.log(`JAWSDB_URL: ${process.env.JAWSDB_URL}`);
+  sails.log(process.env);
+
 };
