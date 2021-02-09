@@ -14,11 +14,6 @@ module.exports = {
       type: 'string',
       required: true,
     },
-    state: {
-      type: 'number',
-      required: false,
-      defaultsTo: 0,
-    },
     userId: {
       type: 'number',
       required: true,
@@ -40,7 +35,7 @@ module.exports = {
   fn: async function (inputs, exits) {
 
     const description = inputs.description;
-    const state = inputs.state !== undefined ? inputs.state : 0;
+    const state = sails.config.enums.taskState.INCOMPLETE;
     const userId = inputs.userId;
 
     const user = await User.findOne({ id: userId });
