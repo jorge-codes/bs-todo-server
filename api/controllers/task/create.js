@@ -1,13 +1,9 @@
 // controllers/task/create.js
 
 module.exports = {
-
-
   friendlyName: 'Create',
 
-
   description: 'Create task.',
-
 
   inputs: {
     description: {
@@ -17,23 +13,20 @@ module.exports = {
     userId: {
       type: 'number',
       required: true,
-    }
+    },
   },
-
 
   exits: {
     success: {
-      description: 'JSON object'
+      description: 'JSON object',
     },
     notFound: {
       responseType: 'notFound',
-      description: 'Invalid user id'
-    }
+      description: 'Invalid user id',
+    },
   },
 
-
   fn: async function (inputs, exits) {
-
     const description = inputs.description;
     const state = sails.config.enums.taskState.INCOMPLETE;
     const userId = inputs.userId;
@@ -47,13 +40,10 @@ module.exports = {
     const task = await Task.create({
       description: description,
       state: state,
-      userId: userId
+      userId: userId,
     }).fetch();
-
 
     // All done.
     return exits.success(task);
-  }
-
-
+  },
 };
