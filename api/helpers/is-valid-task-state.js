@@ -1,30 +1,23 @@
 module.exports = {
-
   sync: true,
 
   friendlyName: 'Is valid task state',
 
-
   description: '',
-
 
   inputs: {
     state: {
       type: 'number',
       required: true,
-      description: 'Task state'
-    }
+      description: 'Task state',
+    },
   },
 
-
   exits: {
-
     success: {
       description: 'All done.',
     },
-
   },
-
 
   fn: function (inputs) {
     const taskState = sails.config.enums.taskState;
@@ -43,8 +36,5 @@ module.exports = {
 
     // All done.
     return answer;
-  }
-
-
+  },
 };
-
